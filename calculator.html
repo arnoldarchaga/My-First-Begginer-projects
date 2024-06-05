@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <input id="num1" type="number" placeholder="Enter first number">
+        <input id="num2" type="number" placeholder="Enter second number">
+        <button id="add">Add</button>
+        <button id="subtract">Subtract</button>
+        <button id="multiply">Multiply</button>
+        <button id="divide">Divide</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById('add').addEventListener('click', function() {
+            calculate('+');
+        });
+        document.getElementById('subtract').addEventListener('click', function() {
+            calculate('-');
+        });
+        document.getElementById('multiply').addEventListener('click', function() {
+            calculate('*');
+        });
+        document.getElementById('divide').addEventListener('click', function() {
+            calculate('/');
+        });
+
+        function calculate(operator) {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result;
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                    } else {
+                        alert("Cannot divide by zero");
+                        return;
+                    }
+                    break;
+            }
+            document.getElementById('result').innerHTML = "The result is: " + result;
+        }
+    </script>
+</body>
+</html>

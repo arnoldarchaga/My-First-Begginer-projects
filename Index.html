@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pesos to Dollars Converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body class="container py-4">
+    <h1 class="text-center mb-4">Pesos to Dollars Converter</h1>
+    <div class="input-group mb-3">
+        <input id="pesos" type="number" class="form-control" placeholder="Enter amount in Pesos">
+        <div class="input-group-append">
+            <button onclick="convertToDollars()" class="btn btn-primary">Convert</button>
+        </div>
+    </div>
+    <p id="result" class="lead"></p>
+
+    <script>
+        function convertToDollars() {
+            var pesos = document.getElementById('pesos').value;
+            var dollars = pesos * 0.05; // Conversion rate
+            document.getElementById('result').innerHTML = "The equivalent amount in U.S. Dollars is: $" + dollars.toFixed(2);
+        }
+    </script>
+</body>
+</html>
